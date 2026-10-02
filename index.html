@@ -8,7 +8,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
 :root {
@@ -25,9 +25,7 @@
   padding: 0;
 }
 
-html {
-  scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 
 body {
   font-family: "Montserrat", sans-serif;
@@ -36,11 +34,9 @@ body {
   overflow-x: hidden;
 }
 
-button {
-  font: inherit;
-}
+button { font: inherit; }
 
-/* PORTADA: CAFÉ MÁS OSCURO Y CORAZONES */
+/* PORTADA COLOR CAFÉ Y CORAZONES */
 
 #cover {
   min-height: 100vh;
@@ -63,10 +59,11 @@ button {
   position: absolute;
   inset: 0;
   z-index: -1;
-  background:
-    radial-gradient(ellipse at center,
-      rgba(255, 250, 245, 0.12),
-      rgba(65, 39, 24, 0.24));
+  background: radial-gradient(
+    ellipse at center,
+    rgba(255, 250, 245, 0.12),
+    rgba(65, 39, 24, 0.24)
+  );
 }
 
 .cover-hearts {
@@ -106,14 +103,8 @@ button {
 .cover-hearts span:nth-child(20) { top: 15%; left: 65%; font-size: 20px; animation-delay: -3s; }
 
 @keyframes heartFloat {
-  0%, 100% {
-    transform: translateY(0) rotate(-8deg);
-    opacity: 0.55;
-  }
-  50% {
-    transform: translateY(-14px) rotate(8deg);
-    opacity: 0.95;
-  }
+  0%, 100% { transform: translateY(0) rotate(-8deg); opacity: 0.55; }
+  50% { transform: translateY(-14px) rotate(8deg); opacity: 0.95; }
 }
 
 .cover-content {
@@ -139,9 +130,7 @@ button {
   max-width: 800px;
 }
 
-.cover-title span {
-  display: block;
-}
+.cover-title span { display: block; }
 
 .cover-heart {
   font-size: 55px;
@@ -186,11 +175,7 @@ button {
   justify-content: center;
   text-align: center;
   padding: 55px 18px 70px;
-  background: radial-gradient(
-    ellipse at top,
-    #fffaf5 0%,
-    #f0dfcf 78%
-  );
+  background: radial-gradient(ellipse at top, #fffaf5 0%, #f0dfcf 78%);
 }
 
 .letter-content {
@@ -261,12 +246,8 @@ button {
 }
 
 @keyframes giraffeFloat {
-  0%, 100% {
-    transform: translateY(0) rotate(-1deg);
-  }
-  50% {
-    transform: translateY(-5px) rotate(1deg);
-  }
+  0%, 100% { transform: translateY(0) rotate(-1deg); }
+  50% { transform: translateY(-5px) rotate(1deg); }
 }
 
 /* SOBRE */
@@ -353,8 +334,6 @@ button {
   backface-visibility: visible;
 }
 
-/* PAPEL DEL SOBRE: SIN FRASE ADICIONAL */
-
 .paper {
   position: absolute;
   width: 80%;
@@ -369,9 +348,8 @@ button {
   align-items: center;
   justify-content: center;
   padding: 12px;
-  transition:
-    top 1.4s cubic-bezier(0.22, 0.75, 0.2, 1),
-    transform 1.4s cubic-bezier(0.22, 0.75, 0.2, 1);
+  transition: top 1.4s cubic-bezier(0.22, 0.75, 0.2, 1),
+              transform 1.4s cubic-bezier(0.22, 0.75, 0.2, 1);
 }
 
 .star-seal {
@@ -386,13 +364,8 @@ button {
   transition: opacity 0.3s;
 }
 
-.envelope.open {
-  cursor: default;
-}
-
-.envelope.open:hover {
-  transform: none;
-}
+.envelope.open { cursor: default; }
+.envelope.open:hover { transform: none; }
 
 .envelope.open .envelope-flap {
   transform: rotateX(180deg);
@@ -406,9 +379,7 @@ button {
 }
 
 .envelope.open .envelope-label,
-.envelope.open .star-seal {
-  opacity: 0;
-}
+.envelope.open .star-seal { opacity: 0; }
 
 .envelope-hint {
   font-size: 12px;
@@ -423,7 +394,7 @@ button {
   50% { opacity: 1; }
 }
 
-/* NUBES */
+/* TRANSICIÓN DE NUBES */
 
 #cloudTransition {
   position: fixed;
@@ -448,12 +419,7 @@ button {
   height: 60vh;
   min-width: 380px;
   min-height: 330px;
-  background: radial-gradient(
-    ellipse at 45% 45%,
-    #fffdf8 0%,
-    #fff9f0 58%,
-    #f8eadc 100%
-  );
+  background: radial-gradient(ellipse at 45% 45%, #fffdf8 0%, #fff9f0 58%, #f8eadc 100%);
   border-radius: 50%;
   filter: drop-shadow(0 0 14px rgba(255, 248, 240, 0.65));
   top: 20vh;
@@ -481,15 +447,8 @@ button {
   top: 5%;
 }
 
-.cloud-left {
-  left: -65vw;
-  transform: translateX(-10vw);
-}
-
-.cloud-right {
-  right: -65vw;
-  transform: translateX(10vw);
-}
+.cloud-left { left: -65vw; transform: translateX(-10vw); }
+.cloud-right { right: -65vw; transform: translateX(10vw); }
 
 .cloud-left.c1 { top: -10vh; height: 70vh; }
 .cloud-left.c2 { top: 25vh; height: 65vh; width: 65vw; }
@@ -535,7 +494,7 @@ button {
   100% { opacity: 0; }
 }
 
-/* REVELACIÓN */
+/* MENSAJE REVELADO */
 
 #reveal {
   display: none;
@@ -543,12 +502,7 @@ button {
   min-height: 100svh;
   text-align: center;
   padding: 80px 18px 35px;
-  background: radial-gradient(
-    ellipse at top,
-    #fffaf5 0%,
-    #f4e5d7 58%,
-    #e9d2bf 100%
-  );
+  background: radial-gradient(ellipse at top, #fffaf5 0%, #f4e5d7 58%, #e9d2bf 100%);
   opacity: 0;
   transform: translateY(15px);
   transition: opacity 0.9s ease, transform 0.9s ease;
@@ -562,25 +516,6 @@ button {
 .reveal-content {
   width: min(1050px, 100%);
   margin: 0 auto;
-}
-
-.reveal-small {
-  font-size: 12px;
-  letter-spacing: 4px;
-  text-transform: uppercase;
-  color: #987963;
-  margin-bottom: 15px;
-}
-
-.reveal-title {
-  font: 500 clamp(48px, 8vw, 82px)/1.05 "Cormorant Garamond", serif;
-  color: #76533e;
-  margin-bottom: 22px;
-}
-
-.reveal-title span {
-  display: block;
-  font-weight: 600;
 }
 
 .elephant-wrap {
@@ -599,64 +534,40 @@ button {
 }
 
 @keyframes animalPop {
-  from {
-    opacity: 0;
-    transform: translateY(24px) scale(0.94);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
+  from { opacity: 0; transform: translateY(24px) scale(0.94); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
 }
 
-/* CARTA ESTÉTICA: TEXTO ORIGINAL Y EMOJIS */
+/* TEXTO SIN MARCO DE HOJA */
 
 .announcement {
-  max-width: 760px;
+  max-width: 820px;
   margin: 0 auto 42px;
-  padding: 38px clamp(20px, 5vw, 52px);
-  background:
-    radial-gradient(ellipse at top left, rgba(255,255,255,0.92), transparent 70%),
-    #fffaf5;
-  border: 1px solid rgba(194, 159, 132, 0.45);
-  border-radius: 5px;
-  box-shadow:
-    0 15px 38px rgba(95, 66, 46, 0.11),
-    inset 0 0 0 5px rgba(228, 207, 190, 0.16);
+  padding: 20px clamp(12px, 3vw, 28px) 30px;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
   color: #795b47;
-  font: 400 clamp(18px, 2.8vw, 23px)/1.8 "Cormorant Garamond", serif;
+  font: 400 clamp(19px, 2.8vw, 25px)/1.8 "Cormorant Garamond", serif;
   position: relative;
 }
 
-.announcement::before,
-.announcement::after {
-  content: "♥";
-  display: block;
-  font-size: 20px;
-  color: #b88769;
-  letter-spacing: 8px;
-}
+.announcement p { margin-bottom: 20px; }
+.announcement p:last-child { margin-bottom: 0; }
 
-.announcement::before {
-  margin-bottom: 20px;
-}
-
-.announcement::after {
-  margin-top: 22px;
-}
-
-.announcement p {
-  margin-bottom: 20px;
-}
-
-.announcement p:last-child {
-  margin-bottom: 0;
+.announcement .announcement-intro {
+  font: 600 clamp(27px, 4.4vw, 42px)/1.35 "Cormorant Garamond", serif;
+  color: #76533e;
+  margin-bottom: 12px;
 }
 
 .announcement .announcement-heading {
-  font: 600 clamp(29px, 4.5vw, 39px)/1.25 "Cormorant Garamond", serif;
-  color: #9a6848;
-  margin-bottom: 26px;
+  font: 400 clamp(72px, 13vw, 124px)/1.12 "Great Vibes", cursive;
+  color: #8b4e2e;
+  margin: 4px 0 24px;
+  text-shadow: 0 3px 0 rgba(255,255,255,0.55), 0 8px 24px rgba(117,75,48,0.18);
+  letter-spacing: 0;
 }
 
 .announcement .announcement-final {
@@ -700,13 +611,8 @@ button {
   animation: photoIn 0.8s ease forwards;
 }
 
-.photo-card:nth-child(2) {
-  animation-delay: 0.12s;
-}
-
-.photo-card:nth-child(3) {
-  animation-delay: 0.24s;
-}
+.photo-card:nth-child(2) { animation-delay: 0.12s; }
+.photo-card:nth-child(3) { animation-delay: 0.24s; }
 
 .photo-card img {
   width: 100%;
@@ -725,10 +631,49 @@ button {
 }
 
 @keyframes photoIn {
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* CUENTA REGRESIVA */
+
+.countdown {
+  width: min(850px, 100%);
+  margin: 0 auto 48px;
+  padding: 12px 10px 30px;
+  color: #76533e;
+}
+
+.countdown-title {
+  font: 600 clamp(31px, 5vw, 48px)/1.15 "Cormorant Garamond", serif;
+  margin-bottom: 22px;
+}
+
+.countdown-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.countdown-unit {
+  padding: 18px 8px;
+  background: rgba(255, 250, 245, 0.55);
+  border-radius: 12px;
+}
+
+.countdown-number {
+  display: block;
+  font: 600 clamp(27px, 5vw, 44px)/1.1 "Cormorant Garamond", serif;
+  color: #8b4e2e;
+  font-variant-numeric: tabular-nums;
+}
+
+.countdown-label {
+  display: block;
+  margin-top: 7px;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #987963;
 }
 
 /* MENSAJE FINAL */
@@ -761,30 +706,16 @@ button {
   padding-bottom: 15px;
 }
 
-/* AJUSTES PARA MÓVILES */
+/* MÓVILES */
 
 @media (max-width: 650px) {
-  .cover-small {
-    letter-spacing: 2.5px;
-  }
+  .cover-small { letter-spacing: 2.5px; }
+  .cover-title { font-size: clamp(40px, 12vw, 58px); }
 
-  .cover-title {
-    font-size: clamp(40px, 12vw, 58px);
-  }
+  .giraffe-container { height: 205px; }
+  .giraffe { height: 205px; width: min(280px, 78vw); }
 
-  .giraffe-container {
-    height: 205px;
-  }
-
-  .giraffe {
-    height: 205px;
-    width: min(280px, 78vw);
-  }
-
-  .envelope {
-    height: 175px;
-    width: min(290px, 82vw);
-  }
+  .envelope { height: 175px; width: min(290px, 82vw); }
 
   .envelope-body::before {
     border-left-width: 145px;
@@ -802,31 +733,24 @@ button {
     border-top-width: 95px;
   }
 
-  .envelope.open .paper {
-    top: -100px;
-  }
-
-  .paper {
-    height: 120px;
-  }
-
-  .envelope-label {
-    font-size: 18px;
-    bottom: 24px;
-  }
-
-  .star-seal {
-    top: 73px;
-  }
+  .envelope.open .paper { top: -100px; }
+  .paper { height: 120px; }
+  .envelope-label { font-size: 18px; bottom: 24px; }
+  .star-seal { top: 73px; }
 
   .photo-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 12px;
   }
 
-  .photo-card {
-    border-width: 5px;
+  .photo-card { border-width: 5px; }
+
+  .countdown-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
   }
+
+  .countdown-unit { padding: 14px 6px; }
 
   .cloud {
     min-width: 280px;
@@ -835,27 +759,14 @@ button {
     height: 55vh;
   }
 
-  .cloud-left {
-    left: -90vw;
-  }
-
-  .cloud-right {
-    right: -90vw;
-  }
-
-  #reveal {
-    padding-top: 58px;
-  }
-
-  .announcement {
-    padding: 28px 18px;
-  }
+  .cloud-left { left: -90vw; }
+  .cloud-right { right: -90vw; }
+  #reveal { padding-top: 58px; }
+  .announcement { padding: 28px 18px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
+  *, *::before, *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     scroll-behavior: auto !important;
@@ -872,42 +783,20 @@ button {
   <div class="cover-overlay"></div>
 
   <div class="cover-hearts" aria-hidden="true">
-    <span>♥</span>
-    <span>♡</span>
-    <span>♥</span>
-    <span>♡</span>
-    <span>♥</span>
-    <span>♡</span>
-    <span>♥</span>
-    <span>♡</span>
-    <span>♥</span>
-    <span>♡</span>
-    <span>♥</span>
-    <span>♡</span>
-    <span>♥</span>
-    <span>♡</span>
-    <span>♥</span>
-    <span>♡</span>
-    <span>♥</span>
-    <span>♡</span>
-    <span>♥</span>
-    <span>♡</span>
+    <span>♥</span><span>♡</span><span>♥</span><span>♡</span><span>♥</span>
+    <span>♡</span><span>♥</span><span>♡</span><span>♥</span><span>♡</span>
+    <span>♥</span><span>♡</span><span>♥</span><span>♡</span><span>♥</span>
+    <span>♡</span><span>♥</span><span>♡</span><span>♥</span><span>♡</span>
   </div>
 
   <div class="cover-content">
     <p class="cover-small">Una noticia llena de ternura</p>
-
     <h1 class="cover-title">
       <span>Aquí hay algo</span>
       <span>con amor para ustedes...</span>
     </h1>
-
     <div class="cover-heart" aria-hidden="true">♥</div>
-
-    <button
-      class="discover-btn"
-      type="button"
-      onclick="openCapsule()">
+    <button class="discover-btn" type="button" onclick="openCapsule()">
       Descubrir la sorpresa
     </button>
   </div>
@@ -916,10 +805,7 @@ button {
 <!-- SOBRE Y JIRAFA -->
 <section id="letterSection">
   <div class="letter-content">
-
-    <h2 class="letter-title">
-      Un pequeño secreto para compartir
-    </h2>
+    <h2 class="letter-title">Un pequeño secreto para compartir</h2>
 
     <p class="letter-subtitle">
       Se acerca un momento muy bonito. Tómense un instante,
@@ -928,40 +814,22 @@ button {
     </p>
 
     <div class="envelope-area">
-
       <div class="giraffe-container">
-        <img
-          src="jirafa.png"
-          class="giraffe"
-          alt="Jirafa de peluche"
-          onerror="this.style.display='none'">
+        <img src="jirafa.png" class="giraffe" alt="Jirafa de peluche"
+             onerror="this.style.display='none'">
       </div>
 
-      <div
-        class="envelope"
-        id="envelope"
-        role="button"
-        tabindex="0"
-        aria-label="Abrir el sobre"
-        onclick="openEnvelope()"
-        onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openEnvelope();}">
-
+      <div class="envelope" id="envelope" role="button" tabindex="0"
+           aria-label="Abrir el sobre" onclick="openEnvelope()"
+           onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openEnvelope();}">
         <div class="envelope-body"></div>
-
-        <div class="envelope-label">
-          Tenemos algo que contarles...
-        </div>
-
+        <div class="envelope-label">Tenemos algo que contarles...</div>
         <div class="paper"></div>
         <div class="envelope-flap"></div>
-
         <div class="star-seal" aria-hidden="true">♥</div>
       </div>
 
-      <p class="envelope-hint">
-        ♥ Haz clic para descubrirlo ♥
-      </p>
-
+      <p class="envelope-hint">♥ Haz clic para descubrirlo ♥</p>
     </div>
   </div>
 </section>
@@ -969,14 +837,12 @@ button {
 <!-- NUBES -->
 <div id="cloudTransition" aria-hidden="true">
   <div class="cloud-light"></div>
-
   <div class="cloud cloud-left c1"></div>
   <div class="cloud cloud-left c2"></div>
   <div class="cloud cloud-left c3"></div>
   <div class="cloud cloud-left c4"></div>
   <div class="cloud cloud-left c5"></div>
   <div class="cloud cloud-left c6"></div>
-
   <div class="cloud cloud-right c1"></div>
   <div class="cloud cloud-right c2"></div>
   <div class="cloud cloud-right c3"></div>
@@ -990,126 +856,142 @@ button {
   <div class="reveal-content">
 
     <div class="elephant-wrap">
-      <img
-        src="Animalitos.png"
-        class="animalitos elephant-illustration"
-        alt="Animalitos tiernos celebrando la llegada de un bebé"
-        onerror="this.style.display='none'">
+      <img src="Animalitos.png" class="animalitos elephant-illustration"
+           alt="Animalitos tiernos celebrando la llegada de un bebé"
+           onerror="this.style.display='none'">
     </div>
 
     <div class="announcement">
-
-      <p class="announcement-heading">
-        👶🏽✨ ¡La familia crece! ✨👶🏽
+      <p class="announcement-intro">
+        Se agrandó la familia, mis papis tienen una gran sorpresa.
       </p>
 
-      <p>
-        Julio César y yo tenemos un pequeño secreto que ya no podemos guardar… 💕
-        <br>
-        ¡Estamos esperando un bebé! 🍼🥰
-      </p>
-
-      <p>
-        Nuestros corazones están llenos de amor, ilusión y felicidad al saber que pronto llegará una personita que cambiará nuestras vidas para siempre.
-      </p>
-
-      <p>
-        Prepárense para muchos abrazos, sonrisas y una nueva razón para celebrar. ❤️
-      </p>
-
-      <p>
-        ¡Sí, van a ser tías-abuelas, tí@s, prim@s! 👶🏽🎉
-      </p>
+      <p class="announcement-heading">¡Llegué yo!</p>
 
       <p class="announcement-final">
-        Hagan campo para un@ más 🥰
+        Estoy list@ para iluminar sus vidas y llenarlos de amor. ❤️
       </p>
-
     </div>
 
-    <!-- SOLAMENTE TRES FOTOGRAFÍAS -->
-    <h3 class="photos-title">
-      El comienzo de una historia inolvidable
-    </h3>
-
+    <!-- TRES FOTOGRAFÍAS -->
+    <h3 class="photos-title">El comienzo de una historia inolvidable</h3>
     <p class="photos-subtitle">
       Un recuerdo de este momento tan especial para guardar siempre.
     </p>
 
     <div class="photo-grid">
-
       <div class="photo-card">
-        <img
-          src="foto1.jpeg"
-          alt="Recuerdo familiar 1"
-          onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-        <div class="photo-placeholder" style="display:none">
-          Un recuerdo especial
-        </div>
+        <img src="foto1.jpeg" alt="Recuerdo familiar 1"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="photo-placeholder" style="display:none">Un recuerdo especial</div>
       </div>
 
       <div class="photo-card">
-        <img
-          src="foto2.jpeg"
-          alt="Recuerdo familiar 2"
-          onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-        <div class="photo-placeholder" style="display:none">
-          Un recuerdo especial
-        </div>
+        <img src="foto2.jpeg" alt="Recuerdo familiar 2"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="photo-placeholder" style="display:none">Un recuerdo especial</div>
       </div>
 
       <div class="photo-card">
-        <img
-          src="foto3.jpeg"
-          alt="Recuerdo familiar 3"
-          onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-        <div class="photo-placeholder" style="display:none">
-          Un recuerdo especial
-        </div>
+        <img src="foto3.jpeg" alt="Recuerdo familiar 3"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="photo-placeholder" style="display:none">Un recuerdo especial</div>
       </div>
-
     </div>
+
+    <!-- CUENTA REGRESIVA AL 10 DE JUNIO DE 2027 -->
+    <section class="countdown" aria-label="Cuenta regresiva para conocer al bebé">
+      <h3 class="countdown-title">¡Nos vemos en...</h3>
+      <div class="countdown-grid" aria-live="polite">
+        <div class="countdown-unit">
+          <span class="countdown-number" id="countdownMonths">0</span>
+          <span class="countdown-label">Meses</span>
+        </div>
+        <div class="countdown-unit">
+          <span class="countdown-number" id="countdownDays">0</span>
+          <span class="countdown-label">Días</span>
+        </div>
+        <div class="countdown-unit">
+          <span class="countdown-number" id="countdownMinutes">0</span>
+          <span class="countdown-label">Minutos</span>
+        </div>
+        <div class="countdown-unit">
+          <span class="countdown-number" id="countdownSeconds">0</span>
+          <span class="countdown-label">Segundos!</span>
+        </div>
+      </div>
+    </section>
 
     <!-- MENSAJE FINAL -->
     <footer class="footer">
-
       <div class="footer-heart" aria-hidden="true">♥</div>
-
       <p class="footer-text">
         Que este bebé llegue rodeado de ternura,
         encuentre siempre un hogar lleno de risas
         y crezca sabiendo que hay una familia entera
         deseando darle amor.
       </p>
-
-      <p class="footer-small">
-        Con todo nuestro amor para ustedes
-      </p>
-
+      <p class="footer-small">Con todo nuestro amor para ustedes</p>
     </footer>
 
   </div>
 </section>
 
+<audio id="backgroundMusic"
+       src="sonican-babies-piano-delicate-loop-356793.mp3"
+       preload="auto" loop></audio>
+
 <script>
 let envelopeOpening = false;
 
+const countdownTarget = new Date(2027, 5, 10, 0, 0, 0);
+const backgroundMusic = document.getElementById("backgroundMusic");
+
+function updateCountdown() {
+  const now = new Date();
+
+  if (now >= countdownTarget) {
+    document.getElementById("countdownMonths").textContent = "0";
+    document.getElementById("countdownDays").textContent = "0";
+    document.getElementById("countdownMinutes").textContent = "0";
+    document.getElementById("countdownSeconds").textContent = "0";
+    return;
+  }
+
+  let months = (countdownTarget.getFullYear() - now.getFullYear()) * 12
+    + (countdownTarget.getMonth() - now.getMonth());
+
+  const monthAnchor = new Date(now);
+  monthAnchor.setMonth(monthAnchor.getMonth() + months);
+  if (monthAnchor > countdownTarget) months--;
+
+  const afterMonths = new Date(now);
+  afterMonths.setMonth(afterMonths.getMonth() + months);
+
+  const remainingAfterMonths = countdownTarget.getTime() - afterMonths.getTime();
+  const days = Math.floor(remainingAfterMonths / 86400000);
+  const remainingAfterDays = remainingAfterMonths - days * 86400000;
+  const minutes = Math.floor(remainingAfterDays / 60000);
+  const seconds = Math.floor((remainingAfterDays % 60000) / 1000);
+
+  document.getElementById("countdownMonths").textContent = months;
+  document.getElementById("countdownDays").textContent = days;
+  document.getElementById("countdownMinutes").textContent = minutes;
+  document.getElementById("countdownSeconds").textContent = seconds;
+}
+
+updateCountdown();
+window.setInterval(updateCountdown, 1000);
+
 function openCapsule() {
-  const cover = document.getElementById("cover");
-  const letter = document.getElementById("letterSection");
+  document.getElementById("cover").style.display = "none";
+  document.getElementById("letterSection").style.display = "flex";
 
-  cover.style.display = "none";
-  letter.style.display = "flex";
-
-  window.scrollTo({
-    top: 0,
-    behavior: "auto"
-  });
+  window.scrollTo({ top: 0, behavior: "auto" });
 }
 
 function openEnvelope() {
   if (envelopeOpening) return;
-
   envelopeOpening = true;
 
   const envelope = document.getElementById("envelope");
@@ -1120,9 +1002,22 @@ function openEnvelope() {
   envelope.classList.add("open");
   envelope.setAttribute("aria-label", "Sobre abierto");
 
+  /*
+    Se inicia la reproducción durante el clic del usuario, pero en silencio.
+    Cuando aparece el mensaje, la canción vuelve al principio y se escucha.
+    Esto ayuda a evitar que el navegador bloquee el audio automático.
+  */
+  if (backgroundMusic) {
+    backgroundMusic.volume = 0;
+    backgroundMusic.currentTime = 0;
+    const playAttempt = backgroundMusic.play();
+    if (playAttempt && typeof playAttempt.catch === "function") {
+      playAttempt.catch(() => {});
+    }
+  }
+
   window.setTimeout(() => {
     clouds.style.display = "block";
-
     clouds.classList.remove("active");
     void clouds.offsetWidth;
     clouds.classList.add("active");
@@ -1131,23 +1026,31 @@ function openEnvelope() {
   window.setTimeout(() => {
     letter.style.display = "none";
     reveal.style.display = "block";
-
-    window.scrollTo({
-      top: 0,
-      behavior: "auto"
-    });
+    window.scrollTo({ top: 0, behavior: "auto" });
   }, 2800);
 
   window.setTimeout(() => {
     clouds.classList.remove("active");
     clouds.style.display = "none";
-
     reveal.classList.add("visible");
 
-    window.scrollTo({
-      top: 0,
-      behavior: "auto"
-    });
+    if (backgroundMusic) {
+      try {
+        backgroundMusic.currentTime = 0;
+      } catch (error) {
+        // Si el navegador no permite reiniciar la posición, continúa reproduciendo.
+      }
+      backgroundMusic.volume = 0.45;
+
+      const playAttempt = backgroundMusic.play();
+      if (playAttempt && typeof playAttempt.catch === "function") {
+        playAttempt.catch(() => {
+          // Algunos navegadores requieren que el usuario permita el audio.
+        });
+      }
+    }
+
+    window.scrollTo({ top: 0, behavior: "auto" });
   }, 6250);
 }
 </script>
