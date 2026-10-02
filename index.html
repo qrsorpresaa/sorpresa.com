@@ -19,11 +19,7 @@
   --light: #f5e8dc;
 }
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+* { box-sizing: border-box; margin: 0; padding: 0; }
 
 html { scroll-behavior: smooth; }
 
@@ -36,7 +32,7 @@ body {
 
 button { font: inherit; }
 
-/* PORTADA COLOR CAFÉ Y CORAZONES */
+/* PORTADA CAFÉ CON CORAZONES */
 
 #cover {
   min-height: 100vh;
@@ -59,11 +55,9 @@ button { font: inherit; }
   position: absolute;
   inset: 0;
   z-index: -1;
-  background: radial-gradient(
-    ellipse at center,
+  background: radial-gradient(ellipse at center,
     rgba(255, 250, 245, 0.12),
-    rgba(65, 39, 24, 0.24)
-  );
+    rgba(65, 39, 24, 0.24));
 }
 
 .cover-hearts {
@@ -160,12 +154,9 @@ button { font: inherit; }
   transition: transform 0.25s, background 0.25s;
 }
 
-.discover-btn:hover {
-  transform: translateY(-3px);
-  background: #fff;
-}
+.discover-btn:hover { transform: translateY(-3px); background: #fff; }
 
-/* SECCIÓN DEL SOBRE */
+/* SOBRE */
 
 #letterSection {
   min-height: 100vh;
@@ -198,8 +189,6 @@ button { font: inherit; }
   max-width: 500px;
   margin-bottom: 28px;
 }
-
-/* ANIMALITOS */
 
 .animalitos {
   display: block;
@@ -249,8 +238,6 @@ button { font: inherit; }
   0%, 100% { transform: translateY(0) rotate(-1deg); }
   50% { transform: translateY(-5px) rotate(1deg); }
 }
-
-/* SOBRE */
 
 .envelope {
   width: min(310px, 80vw);
@@ -538,7 +525,7 @@ button { font: inherit; }
   to { opacity: 1; transform: translateY(0) scale(1); }
 }
 
-/* TEXTO SIN MARCO DE HOJA */
+/* MENSAJE SIN MARCO */
 
 .announcement {
   max-width: 820px;
@@ -576,7 +563,7 @@ button { font: inherit; }
   font-size: clamp(21px, 3vw, 26px);
 }
 
-/* FOTOGRAFÍAS */
+/* FOTOGRAFÍAS: SOLO DOS */
 
 .photos-title {
   font: 500 clamp(32px, 5vw, 48px)/1.15 "Cormorant Garamond", serif;
@@ -593,7 +580,7 @@ button { font: inherit; }
 
 .photo-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 18px;
   width: min(950px, 100%);
   margin: 0 auto 55px;
@@ -612,7 +599,6 @@ button { font: inherit; }
 }
 
 .photo-card:nth-child(2) { animation-delay: 0.12s; }
-.photo-card:nth-child(3) { animation-delay: 0.24s; }
 
 .photo-card img {
   width: 100%;
@@ -873,7 +859,7 @@ button { font: inherit; }
       </p>
     </div>
 
-    <!-- TRES FOTOGRAFÍAS -->
+    <!-- SOLAMENTE DOS FOTOGRAFÍAS -->
     <h3 class="photos-title">El comienzo de una historia inolvidable</h3>
     <p class="photos-subtitle">
       Un recuerdo de este momento tan especial para guardar siempre.
@@ -891,15 +877,9 @@ button { font: inherit; }
              onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
         <div class="photo-placeholder" style="display:none">Un recuerdo especial</div>
       </div>
-
-      <div class="photo-card">
-        <img src="foto3.jpeg" alt="Recuerdo familiar 3"
-             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-        <div class="photo-placeholder" style="display:none">Un recuerdo especial</div>
-      </div>
     </div>
 
-    <!-- CUENTA REGRESIVA AL 10 DE JUNIO DE 2027 -->
+    <!-- CUENTA REGRESIVA HASTA EL 10 DE JUNIO DE 2027 -->
     <section class="countdown" aria-label="Cuenta regresiva para conocer al bebé">
       <h3 class="countdown-title">¡Nos vemos en...</h3>
       <div class="countdown-grid" aria-live="polite">
@@ -945,7 +925,6 @@ button { font: inherit; }
 let envelopeOpening = false;
 
 const countdownTarget = new Date(2027, 5, 10, 0, 0, 0);
-const backgroundMusic = document.getElementById("backgroundMusic");
 
 function updateCountdown() {
   const now = new Date();
@@ -986,7 +965,6 @@ window.setInterval(updateCountdown, 1000);
 function openCapsule() {
   document.getElementById("cover").style.display = "none";
   document.getElementById("letterSection").style.display = "flex";
-
   window.scrollTo({ top: 0, behavior: "auto" });
 }
 
@@ -1001,20 +979,6 @@ function openEnvelope() {
 
   envelope.classList.add("open");
   envelope.setAttribute("aria-label", "Sobre abierto");
-
-  /*
-    Se inicia la reproducción durante el clic del usuario, pero en silencio.
-    Cuando aparece el mensaje, la canción vuelve al principio y se escucha.
-    Esto ayuda a evitar que el navegador bloquee el audio automático.
-  */
-  if (backgroundMusic) {
-    backgroundMusic.volume = 0;
-    backgroundMusic.currentTime = 0;
-    const playAttempt = backgroundMusic.play();
-    if (playAttempt && typeof playAttempt.catch === "function") {
-      playAttempt.catch(() => {});
-    }
-  }
 
   window.setTimeout(() => {
     clouds.style.display = "block";
@@ -1034,18 +998,15 @@ function openEnvelope() {
     clouds.style.display = "none";
     reveal.classList.add("visible");
 
+    // La canción comienza cuando aparece el mensaje.
+    const backgroundMusic = document.getElementById("backgroundMusic");
     if (backgroundMusic) {
-      try {
-        backgroundMusic.currentTime = 0;
-      } catch (error) {
-        // Si el navegador no permite reiniciar la posición, continúa reproduciendo.
-      }
       backgroundMusic.volume = 0.45;
-
       const playAttempt = backgroundMusic.play();
+
       if (playAttempt && typeof playAttempt.catch === "function") {
         playAttempt.catch(() => {
-          // Algunos navegadores requieren que el usuario permita el audio.
+          // Algunos navegadores pueden bloquear la reproducción automática.
         });
       }
     }
