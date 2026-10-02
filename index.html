@@ -1,0 +1,1156 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Una sorpresa especial</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --cream: #fff8f0;
+  --brown: #76533e;
+  --dark: #604331;
+  --tan: #d8b79e;
+  --light: #f5e8dc;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background: #f6eee5;
+  color: var(--dark);
+  overflow-x: hidden;
+}
+
+button {
+  font: inherit;
+}
+
+/* PORTADA: CAFÉ MÁS OSCURO Y CORAZONES */
+
+#cover {
+  min-height: 100vh;
+  min-height: 100svh;
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  padding: 32px 18px;
+  background:
+    radial-gradient(ellipse at 20% 20%, #b99577 0%, transparent 42%),
+    radial-gradient(ellipse at 80% 75%, #916d53 0%, transparent 45%),
+    linear-gradient(135deg, #a98568, #75543f);
+}
+
+.cover-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(ellipse at center,
+      rgba(255, 250, 245, 0.12),
+      rgba(65, 39, 24, 0.24));
+}
+
+.cover-hearts {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.cover-hearts span {
+  position: absolute;
+  color: rgba(255, 242, 230, 0.72);
+  font-size: clamp(18px, 3vw, 35px);
+  animation: heartFloat 8s ease-in-out infinite;
+}
+
+.cover-hearts span:nth-child(1) { top: 8%; left: 12%; }
+.cover-hearts span:nth-child(2) { top: 18%; right: 14%; font-size: 25px; animation-delay: -4s; }
+.cover-hearts span:nth-child(3) { top: 72%; left: 17%; font-size: 28px; animation-delay: -2s; }
+.cover-hearts span:nth-child(4) { top: 78%; right: 12%; font-size: 21px; animation-delay: -6s; }
+.cover-hearts span:nth-child(5) { top: 43%; left: 6%; font-size: 17px; animation-delay: -3s; }
+.cover-hearts span:nth-child(6) { top: 48%; right: 7%; font-size: 30px; animation-delay: -5s; }
+.cover-hearts span:nth-child(7) { top: 30%; left: 24%; font-size: 19px; animation-delay: -2s; }
+.cover-hearts span:nth-child(8) { top: 60%; right: 23%; font-size: 24px; animation-delay: -5s; }
+.cover-hearts span:nth-child(9) { top: 12%; left: 45%; font-size: 17px; animation-delay: -1s; }
+.cover-hearts span:nth-child(10) { top: 88%; left: 42%; font-size: 27px; animation-delay: -3s; }
+.cover-hearts span:nth-child(11) { top: 25%; left: 78%; font-size: 16px; animation-delay: -6s; }
+.cover-hearts span:nth-child(12) { top: 57%; left: 30%; font-size: 22px; animation-delay: -4s; }
+.cover-hearts span:nth-child(13) { top: 85%; right: 35%; font-size: 18px; animation-delay: -2s; }
+.cover-hearts span:nth-child(14) { top: 5%; right: 36%; font-size: 23px; animation-delay: -5s; }
+.cover-hearts span:nth-child(15) { top: 65%; left: 7%; font-size: 20px; animation-delay: -1s; }
+.cover-hearts span:nth-child(16) { top: 38%; right: 15%; font-size: 18px; animation-delay: -3s; }
+.cover-hearts span:nth-child(17) { top: 92%; left: 20%; font-size: 20px; animation-delay: -4s; }
+.cover-hearts span:nth-child(18) { top: 35%; left: 60%; font-size: 25px; animation-delay: -6s; }
+.cover-hearts span:nth-child(19) { top: 75%; left: 55%; font-size: 16px; animation-delay: -2s; }
+.cover-hearts span:nth-child(20) { top: 15%; left: 65%; font-size: 20px; animation-delay: -3s; }
+
+@keyframes heartFloat {
+  0%, 100% {
+    transform: translateY(0) rotate(-8deg);
+    opacity: 0.55;
+  }
+  50% {
+    transform: translateY(-14px) rotate(8deg);
+    opacity: 0.95;
+  }
+}
+
+.cover-content {
+  width: min(850px, 100%);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  color: var(--cream);
+  text-shadow: 0 2px 15px rgba(55, 32, 20, 0.35);
+}
+
+.cover-small {
+  font-size: 12px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  margin-bottom: 17px;
+  color: #fff9f2;
+}
+
+.cover-title {
+  font: 500 clamp(42px, 7vw, 76px)/1.04 "Cormorant Garamond", serif;
+  max-width: 800px;
+}
+
+.cover-title span {
+  display: block;
+}
+
+.cover-heart {
+  font-size: 55px;
+  line-height: 1;
+  margin-top: 22px;
+  color: #fff0e5;
+  animation: heartbeat 1.8s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.12); }
+}
+
+.discover-btn {
+  margin-top: 25px;
+  padding: 15px 35px;
+  border-radius: 99px;
+  border: 1px solid rgba(255, 248, 239, 0.9);
+  background: rgba(255, 247, 239, 0.95);
+  color: #684633;
+  letter-spacing: 1.2px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 10px 28px rgba(64, 40, 25, 0.21);
+  transition: transform 0.25s, background 0.25s;
+}
+
+.discover-btn:hover {
+  transform: translateY(-3px);
+  background: #fff;
+}
+
+/* SECCIÓN DEL SOBRE */
+
+#letterSection {
+  min-height: 100vh;
+  min-height: 100svh;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 55px 18px 70px;
+  background: radial-gradient(
+    ellipse at top,
+    #fffaf5 0%,
+    #f0dfcf 78%
+  );
+}
+
+.letter-content {
+  width: min(700px, 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.letter-title {
+  font: 500 clamp(36px, 6vw, 58px)/1.08 "Cormorant Garamond", serif;
+  color: #654d40;
+  margin-bottom: 12px;
+}
+
+.letter-subtitle {
+  font-size: 14px;
+  line-height: 1.8;
+  color: #866f61;
+  max-width: 500px;
+  margin-bottom: 28px;
+}
+
+/* ANIMALITOS */
+
+.animalitos {
+  display: block;
+  width: min(340px, 82vw);
+  max-height: 250px;
+  object-fit: contain;
+  object-position: center;
+  background: transparent;
+  mix-blend-mode: multiply;
+  filter: drop-shadow(0 12px 14px rgba(80, 53, 38, 0.12));
+  margin: 0 auto 22px;
+}
+
+/* JIRAFA */
+
+.envelope-area {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  perspective: 1000px;
+}
+
+.giraffe-container {
+  height: 245px;
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  position: relative;
+  z-index: 6;
+  margin-bottom: -5px;
+  pointer-events: none;
+}
+
+.giraffe {
+  width: min(310px, 78vw);
+  height: 245px;
+  object-fit: contain;
+  display: block;
+  filter: drop-shadow(0 7px 10px rgba(75, 54, 42, 0.15));
+  transform-origin: bottom center;
+  animation: giraffeFloat 4s ease-in-out infinite;
+}
+
+@keyframes giraffeFloat {
+  0%, 100% {
+    transform: translateY(0) rotate(-1deg);
+  }
+  50% {
+    transform: translateY(-5px) rotate(1deg);
+  }
+}
+
+/* SOBRE */
+
+.envelope {
+  width: min(310px, 80vw);
+  height: 195px;
+  position: relative;
+  z-index: 7;
+  cursor: pointer;
+  filter: drop-shadow(0 15px 22px rgba(75, 54, 42, 0.18));
+  transition: transform 0.3s, filter 0.3s;
+  isolation: isolate;
+}
+
+.envelope:hover {
+  transform: translateY(-3px);
+  filter: drop-shadow(0 20px 28px rgba(75, 54, 42, 0.24));
+}
+
+.envelope:focus-visible {
+  outline: 3px solid #8e674f;
+  outline-offset: 7px;
+}
+
+.envelope-body {
+  position: absolute;
+  inset: 0;
+  background: #d9b69d;
+  border-radius: 4px;
+  overflow: hidden;
+  z-index: 3;
+}
+
+.envelope-body::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border-left: 155px solid #cfa88e;
+  border-top: 98px solid transparent;
+}
+
+.envelope-body::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border-right: 155px solid #c59d83;
+  border-top: 98px solid transparent;
+}
+
+.envelope-label {
+  position: absolute;
+  left: 5px;
+  right: 5px;
+  bottom: 27px;
+  z-index: 5;
+  text-align: center;
+  font: 600 20px/1.2 "Cormorant Garamond", serif;
+  letter-spacing: 0.5px;
+  color: #fff8f1;
+  text-shadow: 0 1px 2px rgba(95, 65, 48, 0.18);
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+
+.envelope-flap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-left: 155px solid transparent;
+  border-right: 155px solid transparent;
+  border-top: 105px solid #e2c1aa;
+  z-index: 4;
+  transform-origin: top center;
+  transition: transform 1s cubic-bezier(0.4, 0, 0.2, 1);
+  backface-visibility: visible;
+}
+
+/* PAPEL DEL SOBRE: SIN FRASE ADICIONAL */
+
+.paper {
+  position: absolute;
+  width: 80%;
+  height: 135px;
+  left: 10%;
+  top: 28px;
+  background: #fffaf4;
+  border-radius: 3px;
+  z-index: 2;
+  box-shadow: 0 6px 18px rgba(86, 61, 45, 0.13);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  transition:
+    top 1.4s cubic-bezier(0.22, 0.75, 0.2, 1),
+    transform 1.4s cubic-bezier(0.22, 0.75, 0.2, 1);
+}
+
+.star-seal {
+  position: absolute;
+  top: 82px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5;
+  color: #fff3e5;
+  font-size: 23px;
+  text-shadow: 0 2px 5px rgba(128, 88, 62, 0.28);
+  transition: opacity 0.3s;
+}
+
+.envelope.open {
+  cursor: default;
+}
+
+.envelope.open:hover {
+  transform: none;
+}
+
+.envelope.open .envelope-flap {
+  transform: rotateX(180deg);
+  z-index: 1;
+}
+
+.envelope.open .paper {
+  top: -112px;
+  transform: scale(1.04);
+  z-index: 6;
+}
+
+.envelope.open .envelope-label,
+.envelope.open .star-seal {
+  opacity: 0;
+}
+
+.envelope-hint {
+  font-size: 12px;
+  letter-spacing: 1px;
+  color: #8a6b57;
+  margin-top: 25px;
+  animation: hintPulse 2s ease-in-out infinite;
+}
+
+@keyframes hintPulse {
+  0%, 100% { opacity: 0.7; }
+  50% { opacity: 1; }
+}
+
+/* NUBES */
+
+#cloudTransition {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: none;
+  overflow: hidden;
+  pointer-events: none;
+  background: transparent;
+}
+
+.cloud-light {
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 248, 239, 0.12);
+  opacity: 0;
+}
+
+.cloud {
+  position: absolute;
+  width: 58vw;
+  height: 60vh;
+  min-width: 380px;
+  min-height: 330px;
+  background: radial-gradient(
+    ellipse at 45% 45%,
+    #fffdf8 0%,
+    #fff9f0 58%,
+    #f8eadc 100%
+  );
+  border-radius: 50%;
+  filter: drop-shadow(0 0 14px rgba(255, 248, 240, 0.65));
+  top: 20vh;
+}
+
+.cloud::before,
+.cloud::after {
+  content: "";
+  position: absolute;
+  background: inherit;
+  border-radius: 50%;
+}
+
+.cloud::before {
+  width: 70%;
+  height: 75%;
+  left: 8%;
+  top: -20%;
+}
+
+.cloud::after {
+  width: 78%;
+  height: 82%;
+  right: 0;
+  top: 5%;
+}
+
+.cloud-left {
+  left: -65vw;
+  transform: translateX(-10vw);
+}
+
+.cloud-right {
+  right: -65vw;
+  transform: translateX(10vw);
+}
+
+.cloud-left.c1 { top: -10vh; height: 70vh; }
+.cloud-left.c2 { top: 25vh; height: 65vh; width: 65vw; }
+.cloud-left.c3 { top: 55vh; height: 65vh; width: 70vw; }
+.cloud-left.c4 { top: 10vh; height: 58vh; width: 48vw; }
+.cloud-left.c5 { top: 45vh; height: 60vh; width: 56vw; }
+.cloud-left.c6 { top: 65vh; height: 48vh; width: 52vw; }
+
+.cloud-right.c1 { top: -8vh; height: 70vh; }
+.cloud-right.c2 { top: 22vh; height: 65vh; width: 66vw; }
+.cloud-right.c3 { top: 54vh; height: 65vh; width: 70vw; }
+.cloud-right.c4 { top: 8vh; height: 58vh; width: 48vw; }
+.cloud-right.c5 { top: 44vh; height: 60vh; width: 56vw; }
+.cloud-right.c6 { top: 66vh; height: 48vh; width: 52vw; }
+
+#cloudTransition.active .cloud-light {
+  animation: cloudLight 5s ease-in-out forwards;
+}
+
+#cloudTransition.active .cloud-left {
+  animation: cloudLeft 5s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+}
+
+#cloudTransition.active .cloud-right {
+  animation: cloudRight 5s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+}
+
+@keyframes cloudLeft {
+  0% { transform: translateX(-12vw); }
+  30%, 58% { transform: translateX(66vw); }
+  100% { transform: translateX(-110vw); }
+}
+
+@keyframes cloudRight {
+  0% { transform: translateX(12vw); }
+  30%, 58% { transform: translateX(-66vw); }
+  100% { transform: translateX(110vw); }
+}
+
+@keyframes cloudLight {
+  0%, 15% { opacity: 0; }
+  35%, 58% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+/* REVELACIÓN */
+
+#reveal {
+  display: none;
+  min-height: 100vh;
+  min-height: 100svh;
+  text-align: center;
+  padding: 80px 18px 35px;
+  background: radial-gradient(
+    ellipse at top,
+    #fffaf5 0%,
+    #f4e5d7 58%,
+    #e9d2bf 100%
+  );
+  opacity: 0;
+  transform: translateY(15px);
+  transition: opacity 0.9s ease, transform 0.9s ease;
+}
+
+#reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-content {
+  width: min(1050px, 100%);
+  margin: 0 auto;
+}
+
+.reveal-small {
+  font-size: 12px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #987963;
+  margin-bottom: 15px;
+}
+
+.reveal-title {
+  font: 500 clamp(48px, 8vw, 82px)/1.05 "Cormorant Garamond", serif;
+  color: #76533e;
+  margin-bottom: 22px;
+}
+
+.reveal-title span {
+  display: block;
+  font-weight: 600;
+}
+
+.elephant-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 160px;
+  margin: 0 auto 20px;
+}
+
+.elephant-illustration {
+  width: min(420px, 90vw);
+  max-height: 290px;
+  margin: 0;
+  animation: animalPop 0.9s both;
+}
+
+@keyframes animalPop {
+  from {
+    opacity: 0;
+    transform: translateY(24px) scale(0.94);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* CARTA ESTÉTICA: TEXTO ORIGINAL Y EMOJIS */
+
+.announcement {
+  max-width: 760px;
+  margin: 0 auto 42px;
+  padding: 38px clamp(20px, 5vw, 52px);
+  background:
+    radial-gradient(ellipse at top left, rgba(255,255,255,0.92), transparent 70%),
+    #fffaf5;
+  border: 1px solid rgba(194, 159, 132, 0.45);
+  border-radius: 5px;
+  box-shadow:
+    0 15px 38px rgba(95, 66, 46, 0.11),
+    inset 0 0 0 5px rgba(228, 207, 190, 0.16);
+  color: #795b47;
+  font: 400 clamp(18px, 2.8vw, 23px)/1.8 "Cormorant Garamond", serif;
+  position: relative;
+}
+
+.announcement::before,
+.announcement::after {
+  content: "♥";
+  display: block;
+  font-size: 20px;
+  color: #b88769;
+  letter-spacing: 8px;
+}
+
+.announcement::before {
+  margin-bottom: 20px;
+}
+
+.announcement::after {
+  margin-top: 22px;
+}
+
+.announcement p {
+  margin-bottom: 20px;
+}
+
+.announcement p:last-child {
+  margin-bottom: 0;
+}
+
+.announcement .announcement-heading {
+  font: 600 clamp(29px, 4.5vw, 39px)/1.25 "Cormorant Garamond", serif;
+  color: #9a6848;
+  margin-bottom: 26px;
+}
+
+.announcement .announcement-final {
+  font-weight: 600;
+  color: #8b6046;
+  font-size: clamp(21px, 3vw, 26px);
+}
+
+/* FOTOGRAFÍAS */
+
+.photos-title {
+  font: 500 clamp(32px, 5vw, 48px)/1.15 "Cormorant Garamond", serif;
+  color: #76533e;
+  margin: 0 auto 10px;
+}
+
+.photos-subtitle {
+  font-size: 13px;
+  line-height: 1.8;
+  color: #8b7362;
+  margin-bottom: 28px;
+}
+
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  width: min(950px, 100%);
+  margin: 0 auto 55px;
+}
+
+.photo-card {
+  overflow: hidden;
+  border: 8px solid rgba(255, 250, 245, 0.9);
+  border-radius: 5px;
+  background: #e8d5c4;
+  box-shadow: 0 8px 22px rgba(95, 66, 46, 0.13);
+  aspect-ratio: 4 / 5;
+  opacity: 0;
+  transform: translateY(25px) scale(0.98);
+  animation: photoIn 0.8s ease forwards;
+}
+
+.photo-card:nth-child(2) {
+  animation-delay: 0.12s;
+}
+
+.photo-card:nth-child(3) {
+  animation-delay: 0.24s;
+}
+
+.photo-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.photo-placeholder {
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  color: #987963;
+  font: italic 20px "Cormorant Garamond", serif;
+}
+
+@keyframes photoIn {
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* MENSAJE FINAL */
+
+.footer {
+  padding: 20px 15px 10px;
+  border-top: 1px solid #d9c1ad;
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.footer-heart {
+  font-size: 35px;
+  color: #b88769;
+  margin-bottom: 14px;
+  animation: heartbeat 2s infinite;
+}
+
+.footer-text {
+  font: 400 clamp(21px, 3vw, 27px)/1.55 "Cormorant Garamond", serif;
+  color: #76533e;
+  margin-bottom: 16px;
+}
+
+.footer-small {
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #987963;
+  padding-bottom: 15px;
+}
+
+/* AJUSTES PARA MÓVILES */
+
+@media (max-width: 650px) {
+  .cover-small {
+    letter-spacing: 2.5px;
+  }
+
+  .cover-title {
+    font-size: clamp(40px, 12vw, 58px);
+  }
+
+  .giraffe-container {
+    height: 205px;
+  }
+
+  .giraffe {
+    height: 205px;
+    width: min(280px, 78vw);
+  }
+
+  .envelope {
+    height: 175px;
+    width: min(290px, 82vw);
+  }
+
+  .envelope-body::before {
+    border-left-width: 145px;
+    border-top-width: 88px;
+  }
+
+  .envelope-body::after {
+    border-right-width: 145px;
+    border-top-width: 88px;
+  }
+
+  .envelope-flap {
+    border-left-width: 145px;
+    border-right-width: 145px;
+    border-top-width: 95px;
+  }
+
+  .envelope.open .paper {
+    top: -100px;
+  }
+
+  .paper {
+    height: 120px;
+  }
+
+  .envelope-label {
+    font-size: 18px;
+    bottom: 24px;
+  }
+
+  .star-seal {
+    top: 73px;
+  }
+
+  .photo-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .photo-card {
+    border-width: 5px;
+  }
+
+  .cloud {
+    min-width: 280px;
+    min-height: 260px;
+    width: 85vw;
+    height: 55vh;
+  }
+
+  .cloud-left {
+    left: -90vw;
+  }
+
+  .cloud-right {
+    right: -90vw;
+  }
+
+  #reveal {
+    padding-top: 58px;
+  }
+
+  .announcement {
+    padding: 28px 18px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- PORTADA -->
+<section id="cover">
+  <div class="cover-overlay"></div>
+
+  <div class="cover-hearts" aria-hidden="true">
+    <span>♥</span>
+    <span>♡</span>
+    <span>♥</span>
+    <span>♡</span>
+    <span>♥</span>
+    <span>♡</span>
+    <span>♥</span>
+    <span>♡</span>
+    <span>♥</span>
+    <span>♡</span>
+    <span>♥</span>
+    <span>♡</span>
+    <span>♥</span>
+    <span>♡</span>
+    <span>♥</span>
+    <span>♡</span>
+    <span>♥</span>
+    <span>♡</span>
+    <span>♥</span>
+    <span>♡</span>
+  </div>
+
+  <div class="cover-content">
+    <p class="cover-small">Una noticia llena de ternura</p>
+
+    <h1 class="cover-title">
+      <span>Aquí hay algo</span>
+      <span>con amor para ustedes...</span>
+    </h1>
+
+    <div class="cover-heart" aria-hidden="true">♥</div>
+
+    <button
+      class="discover-btn"
+      type="button"
+      onclick="openCapsule()">
+      Descubrir la sorpresa
+    </button>
+  </div>
+</section>
+
+<!-- SOBRE Y JIRAFA -->
+<section id="letterSection">
+  <div class="letter-content">
+
+    <h2 class="letter-title">
+      Un pequeño secreto para compartir
+    </h2>
+
+    <p class="letter-subtitle">
+      Se acerca un momento muy bonito. Tómense un instante,
+      abran el sobre y descubran lo que hemos preparado
+      con tanta ilusión.
+    </p>
+
+    <div class="envelope-area">
+
+      <div class="giraffe-container">
+        <img
+          src="jirafa.png"
+          class="giraffe"
+          alt="Jirafa de peluche"
+          onerror="this.style.display='none'">
+      </div>
+
+      <div
+        class="envelope"
+        id="envelope"
+        role="button"
+        tabindex="0"
+        aria-label="Abrir el sobre"
+        onclick="openEnvelope()"
+        onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openEnvelope();}">
+
+        <div class="envelope-body"></div>
+
+        <div class="envelope-label">
+          Tenemos algo que contarles...
+        </div>
+
+        <div class="paper"></div>
+        <div class="envelope-flap"></div>
+
+        <div class="star-seal" aria-hidden="true">♥</div>
+      </div>
+
+      <p class="envelope-hint">
+        ♥ Haz clic para descubrirlo ♥
+      </p>
+
+    </div>
+  </div>
+</section>
+
+<!-- NUBES -->
+<div id="cloudTransition" aria-hidden="true">
+  <div class="cloud-light"></div>
+
+  <div class="cloud cloud-left c1"></div>
+  <div class="cloud cloud-left c2"></div>
+  <div class="cloud cloud-left c3"></div>
+  <div class="cloud cloud-left c4"></div>
+  <div class="cloud cloud-left c5"></div>
+  <div class="cloud cloud-left c6"></div>
+
+  <div class="cloud cloud-right c1"></div>
+  <div class="cloud cloud-right c2"></div>
+  <div class="cloud cloud-right c3"></div>
+  <div class="cloud cloud-right c4"></div>
+  <div class="cloud cloud-right c5"></div>
+  <div class="cloud cloud-right c6"></div>
+</div>
+
+<!-- REVELACIÓN -->
+<section id="reveal">
+  <div class="reveal-content">
+
+    <div class="elephant-wrap">
+      <img
+        src="Animalitos.png"
+        class="animalitos elephant-illustration"
+        alt="Animalitos tiernos celebrando la llegada de un bebé"
+        onerror="this.style.display='none'">
+    </div>
+
+    <div class="announcement">
+
+      <p class="announcement-heading">
+        👶🏽✨ ¡La familia crece! ✨👶🏽
+      </p>
+
+      <p>
+        Julio César y yo tenemos un pequeño secreto que ya no podemos guardar… 💕
+        <br>
+        ¡Estamos esperando un bebé! 🍼🥰
+      </p>
+
+      <p>
+        Nuestros corazones están llenos de amor, ilusión y felicidad al saber que pronto llegará una personita que cambiará nuestras vidas para siempre.
+      </p>
+
+      <p>
+        Prepárense para muchos abrazos, sonrisas y una nueva razón para celebrar. ❤️
+      </p>
+
+      <p>
+        ¡Sí, van a ser tías-abuelas, tí@s, prim@s! 👶🏽🎉
+      </p>
+
+      <p class="announcement-final">
+        Hagan campo para un@ más 🥰
+      </p>
+
+    </div>
+
+    <!-- SOLAMENTE TRES FOTOGRAFÍAS -->
+    <h3 class="photos-title">
+      El comienzo de una historia inolvidable
+    </h3>
+
+    <p class="photos-subtitle">
+      Un recuerdo de este momento tan especial para guardar siempre.
+    </p>
+
+    <div class="photo-grid">
+
+      <div class="photo-card">
+        <img
+          src="foto1.jpeg"
+          alt="Recuerdo familiar 1"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="photo-placeholder" style="display:none">
+          Un recuerdo especial
+        </div>
+      </div>
+
+      <div class="photo-card">
+        <img
+          src="foto2.jpeg"
+          alt="Recuerdo familiar 2"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="photo-placeholder" style="display:none">
+          Un recuerdo especial
+        </div>
+      </div>
+
+      <div class="photo-card">
+        <img
+          src="foto3.jpeg"
+          alt="Recuerdo familiar 3"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="photo-placeholder" style="display:none">
+          Un recuerdo especial
+        </div>
+      </div>
+
+    </div>
+
+    <!-- MENSAJE FINAL -->
+    <footer class="footer">
+
+      <div class="footer-heart" aria-hidden="true">♥</div>
+
+      <p class="footer-text">
+        Que este bebé llegue rodeado de ternura,
+        encuentre siempre un hogar lleno de risas
+        y crezca sabiendo que hay una familia entera
+        deseando darle amor.
+      </p>
+
+      <p class="footer-small">
+        Con todo nuestro amor para ustedes
+      </p>
+
+    </footer>
+
+  </div>
+</section>
+
+<script>
+let envelopeOpening = false;
+
+function openCapsule() {
+  const cover = document.getElementById("cover");
+  const letter = document.getElementById("letterSection");
+
+  cover.style.display = "none";
+  letter.style.display = "flex";
+
+  window.scrollTo({
+    top: 0,
+    behavior: "auto"
+  });
+}
+
+function openEnvelope() {
+  if (envelopeOpening) return;
+
+  envelopeOpening = true;
+
+  const envelope = document.getElementById("envelope");
+  const clouds = document.getElementById("cloudTransition");
+  const letter = document.getElementById("letterSection");
+  const reveal = document.getElementById("reveal");
+
+  envelope.classList.add("open");
+  envelope.setAttribute("aria-label", "Sobre abierto");
+
+  window.setTimeout(() => {
+    clouds.style.display = "block";
+
+    clouds.classList.remove("active");
+    void clouds.offsetWidth;
+    clouds.classList.add("active");
+  }, 1200);
+
+  window.setTimeout(() => {
+    letter.style.display = "none";
+    reveal.style.display = "block";
+
+    window.scrollTo({
+      top: 0,
+      behavior: "auto"
+    });
+  }, 2800);
+
+  window.setTimeout(() => {
+    clouds.classList.remove("active");
+    clouds.style.display = "none";
+
+    reveal.classList.add("visible");
+
+    window.scrollTo({
+      top: 0,
+      behavior: "auto"
+    });
+  }, 6250);
+}
+</script>
+
+</body>
+</html>
